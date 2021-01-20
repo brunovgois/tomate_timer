@@ -10,9 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Tomate Timer',
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-      ),
+      theme:
+          ThemeData(primaryColor: Colors.redAccent, buttonColor: Colors.green),
       home: MainPage(),
     );
   }
