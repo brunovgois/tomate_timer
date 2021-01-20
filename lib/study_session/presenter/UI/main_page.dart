@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tomate_timer/study_session/presenter/UI/tracker_form.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -9,8 +10,11 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Pomodoro'),
+      appBar: AppBar(
+        title: Text('Tomate Timer'),
+      ),
+      body: Column(
+        children: [TrackerForm()],
       ),
     );
   }
