@@ -13,5 +13,7 @@ This project is a clockify based task tracker app built in flutter.
   [equatable](https://pub.dev/packages/equatable): ^1.2.5
   
   [sqflite](https://pub.dev/packages/sqflite):
+  
   [path](https://pub.dev/packages/path):
+  
   [intl](https://pub.dev/packages/intl):
