@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:intl/intl.dart';
+
+import 'package:tomate_timer/study_session/presenter/controller/session_controller.dart';
 
 class TrackerForm extends StatefulWidget {
+  TrackerForm({Key key, @required SessionController this.controller})
+      : super(key: key);
+  final SessionController controller;
+
   @override
   _TrackerFormState createState() => _TrackerFormState();
 }
@@ -68,9 +75,20 @@ class _TrackerFormState extends State<TrackerForm> {
     });
 
     var text = _currentWorkController.text;
-    print('$text ---> $elapsedTime');
+    String formattedDate = getDate();
+
+    widget.controller.dto = widget.controller.dto
+        .copyWith(date: formattedDate, duration: elapsedTime, title: text);
+    widget.controller.saveSession().then((value) => debugPrint(value));
 
     _resetFields();
+  }
+
+  String getDate() {
+    var now = new DateTime.now();
+    var formatter = new DateFormat('dd-MM-yyyy');
+    String formattedDate = formatter.format(now);
+    return formattedDate;
   }
 
   void _resetFields() {
