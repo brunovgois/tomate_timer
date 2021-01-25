@@ -1,17 +1,17 @@
 import 'package:equatable/equatable.dart';
 
 class Session extends Equatable {
-  final int duration;
+  final String duration;
   final String title;
-  final String description;
+  final String date;
 
-  Session({this.duration, this.description, this.title});
+  Session({this.duration, this.date, this.title});
 
   @override
-  List<Object> get props => [this.duration, this.title, this.description];
+  List<Object> get props => [this.duration, this.title, this.date];
 
   @override
   String toString() {
-    return 'Session(duration: $duration, title: $title, description: $description)';
+    return 'Session(duration: $duration, title: $title, date: $date)';
   }
 }
