@@ -21,22 +21,28 @@ class _TrackerListState extends State<TrackerList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 500,
+      height: 600,
       child: ValueListenableBuilder(
         valueListenable: widget.controller.sessions,
         builder: (context, value, child) {
-          return ListView.builder(
-              scrollDirection: Axis.vertical,
-              reverse: true,
-              shrinkWrap: true,
-              itemCount: value.length ?? 0,
-              itemBuilder: (context, index) {
-                var tracker = value[index];
-                return ListTile(
-                  title: Text('${tracker.title} --> ${tracker.duration}'),
-                  subtitle: Text('${tracker.date}'),
-                );
-              });
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView.separated(
+                scrollDirection: Axis.vertical,
+                reverse: true,
+                shrinkWrap: true,
+                itemCount: value.length ?? 0,
+                itemBuilder: (context, index) {
+                  var tracker = value[index];
+                  return ListTile(
+                    title: Text('${tracker.title} --> ${tracker.duration}'),
+                    subtitle: Text('${tracker.date}'),
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return Divider();
+                }),
+          );
         },
       ),
     );
