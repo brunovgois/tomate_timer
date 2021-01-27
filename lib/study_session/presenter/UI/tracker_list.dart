@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
+import 'package:tomate_timer/study_session/presenter/UI/components/session.dart';
 import 'package:tomate_timer/study_session/presenter/controller/session_controller.dart';
 
 class TrackerList extends StatefulWidget {
@@ -34,10 +34,10 @@ class _TrackerListState extends State<TrackerList> {
                 itemCount: value.length ?? 0,
                 itemBuilder: (context, index) {
                   var tracker = value[index];
-                  return ListTile(
-                    title: Text('${tracker.title} --> ${tracker.duration}'),
-                    subtitle: Text('${tracker.date}'),
-                  );
+                  return Session(
+                      title: tracker.title,
+                      date: tracker.date,
+                      elapsedTime: tracker.duration);
                 },
                 separatorBuilder: (context, index) {
                   return Divider();
