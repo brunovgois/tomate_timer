@@ -38,12 +38,15 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text('Tomate Timer'),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            TrackerForm(controller: controller),
-            TrackerList(controller: controller),
-          ],
+      body: SafeArea(
+        bottom: true,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TrackerForm(controller: controller),
+              TrackerList(controller: controller),
+            ],
+          ),
         ),
       ),
     );

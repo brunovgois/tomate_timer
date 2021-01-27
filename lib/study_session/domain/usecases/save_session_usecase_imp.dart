@@ -11,7 +11,6 @@ class SaveSessionUseCaseImp implements SaveSessionUseCase {
 
   @override
   Future<Either<Failure, Session>> save([Session session]) async {
-    //TODO do validation
     var result = await _repository.save(session);
     return result.fold(
       (l) => Left(UseCaseException('Error saving current Session.')),
