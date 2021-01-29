@@ -1,18 +1,13 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:tomate_timer/features/study_session/infra/datasources/session_datasource.dart';
 import 'package:tomate_timer/features/study_session/infra/dto/session_dto.dart';
-import 'package:tomate_timer/features/study_session/external/app_database.dart';
+import 'package:tomate_timer/core/external/database/app_database.dart';
 
 class SessionDatasourceImp implements SessionDatasource {
   static const String _tableName = 'sessions';
   static const String _duration = 'duration';
   static const String _title = 'title';
   static const String _date = 'date';
-
-  static const String tableSql = 'CREATE TABLE $_tableName('
-      '$_duration TEXT,'
-      '$_title Text,'
-      '$_date Text)';
 
   @override
   Future<List<SessionDTO>> findAll() async {
