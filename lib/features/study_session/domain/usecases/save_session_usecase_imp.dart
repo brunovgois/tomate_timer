@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:tomate_timer/core/errors/failure.dart';
-import 'package:tomate_timer/study_session/domain/entities/session.dart';
-import 'package:tomate_timer/study_session/domain/errors/UseCaseException.dart';
-import 'package:tomate_timer/study_session/domain/repositories/session_repository.dart';
-import 'package:tomate_timer/study_session/domain/usecases/save_session_usecase.dart';
+import 'package:tomate_timer/features/study_session/domain/entities/session.dart';
+import 'package:tomate_timer/features/study_session/domain/errors/UseCaseException.dart';
+import 'package:tomate_timer/features/study_session/domain/repositories/session_repository.dart';
+import 'package:tomate_timer/features/study_session/domain/usecases/save_session_usecase.dart';
 
 class SaveSessionUseCaseImp implements SaveSessionUseCase {
   final SessionRepository _repository;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tomate_timer/study_session/presenter/UI/main_page.dart';
+import 'package:tomate_timer/features/study_session/presenter/UI/sessions_page..dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Tomate Timer',
       theme:
           ThemeData(primaryColor: Colors.redAccent, buttonColor: Colors.green),
-      home: MainPage(),
+      home: SessionsPage(),
     );
   }
 }

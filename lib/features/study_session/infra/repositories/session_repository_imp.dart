@@ -1,11 +1,11 @@
 import 'package:tomate_timer/core/mapper/mapper.dart';
-import 'package:tomate_timer/study_session/domain/entities/session.dart';
+import 'package:tomate_timer/features/study_session/domain/entities/session.dart';
 import 'package:tomate_timer/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:tomate_timer/study_session/domain/repositories/session_repository.dart';
-import 'package:tomate_timer/study_session/infra/datasources/session_datasource.dart';
-import 'package:tomate_timer/study_session/infra/dto/session_dto.dart';
-import 'package:tomate_timer/study_session/infra/errors/repository_exception.dart';
+import 'package:tomate_timer/features/study_session/domain/repositories/session_repository.dart';
+import 'package:tomate_timer/features/study_session/infra/datasources/session_datasource.dart';
+import 'package:tomate_timer/features/study_session/infra/dto/session_dto.dart';
+import 'package:tomate_timer/features/study_session/infra/errors/repository_exception.dart';
 
 class SessionRepositoryImp implements SessionRepository {
   final SessionDatasource _datasource;

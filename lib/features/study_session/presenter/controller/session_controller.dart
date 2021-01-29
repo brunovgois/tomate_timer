@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tomate_timer/core/mapper/mapper.dart';
-import 'package:tomate_timer/study_session/domain/entities/session.dart';
-import 'package:tomate_timer/study_session/domain/usecases/findall_sessions_usecase.dart';
-import 'package:tomate_timer/study_session/domain/usecases/save_session_usecase.dart';
-import 'package:tomate_timer/study_session/infra/dto/session_dto.dart';
+import 'package:tomate_timer/features/study_session/domain/entities/session.dart';
+import 'package:tomate_timer/features/study_session/domain/usecases/findall_sessions_usecase.dart';
+import 'package:tomate_timer/features/study_session/domain/usecases/save_session_usecase.dart';
+import 'package:tomate_timer/features/study_session/infra/dto/session_dto.dart';
 
 class SessionController extends ChangeNotifier {
   final SaveSessionUseCase saveSessionUseCase;

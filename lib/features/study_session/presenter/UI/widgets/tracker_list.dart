@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tomate_timer/study_session/presenter/UI/components/session.dart';
-import 'package:tomate_timer/study_session/presenter/controller/session_controller.dart';
+import 'package:tomate_timer/features/study_session/presenter/UI/widgets/session.dart';
+import 'package:tomate_timer/features/study_session/presenter/controller/session_controller.dart';
 
 class TrackerList extends StatefulWidget {
   TrackerList({Key key, @required SessionController this.controller})

@@ -1,6 +1,6 @@
 import 'package:tomate_timer/core/mapper/mapper.dart';
-import 'package:tomate_timer/study_session/domain/entities/session.dart';
-import 'package:tomate_timer/study_session/infra/dto/session_dto.dart';
+import 'package:tomate_timer/features/study_session/domain/entities/session.dart';
+import 'package:tomate_timer/features/study_session/infra/dto/session_dto.dart';
 
 class SessionMapper implements Mapper<SessionDTO, Session> {
   @override

@@ -1,7 +1,7 @@
 import 'package:sqflite/sqflite.dart';
-import 'package:tomate_timer/study_session/infra/datasources/session_datasource.dart';
-import 'package:tomate_timer/study_session/infra/dto/session_dto.dart';
-import 'package:tomate_timer/study_session/external/app_database.dart';
+import 'package:tomate_timer/features/study_session/infra/datasources/session_datasource.dart';
+import 'package:tomate_timer/features/study_session/infra/dto/session_dto.dart';
+import 'package:tomate_timer/features/study_session/external/app_database.dart';
 
 class SessionDatasourceImp implements SessionDatasource {
   static const String _tableName = 'sessions';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:intl/intl.dart';
 
-import 'package:tomate_timer/study_session/presenter/controller/session_controller.dart';
+import 'package:tomate_timer/features/study_session/presenter/controller/session_controller.dart';
 
 class TrackerForm extends StatefulWidget {
   TrackerForm({Key key, @required SessionController this.controller})
@@ -15,10 +15,10 @@ class TrackerForm extends StatefulWidget {
 
 class _TrackerFormState extends State<TrackerForm> {
   final TextEditingController _currentWorkController = TextEditingController();
+  String elapsedTime = '00:00:00';
   Stopwatch watch = Stopwatch();
   Timer timer;
   bool timerIsOff = true;
-  String elapsedTime = '00:00:00';
 
   @override
   Widget build(BuildContext context) {
