@@ -19,3 +19,4 @@ The architecture was built following the clean architectures principles, based a
   [path](https://pub.dev/packages/path):
   
   [intl](https://pub.dev/packages/intl):
+  [modular](https://pub.dev/packages/flutter_modular): any
