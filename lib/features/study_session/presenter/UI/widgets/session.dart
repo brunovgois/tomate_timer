@@ -13,7 +13,10 @@ class Session extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
         leading: Column(
-          children: [Text(elapsedTime), Text(date)],
+          children: [
+            Text(elapsedTime),
+            Text(date, style: TextStyle(fontWeight: FontWeight.w200))
+          ],
         ),
         title: Text(title,
             style: TextStyle(
