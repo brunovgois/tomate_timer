@@ -29,7 +29,7 @@ class _TrackerListState extends State<TrackerList> {
             padding: const EdgeInsets.all(8.0),
             child: ListView.separated(
                 scrollDirection: Axis.vertical,
-                reverse: true,
+                reverse: false, //temp, bug
                 shrinkWrap: true,
                 itemCount: value.length ?? 0,
                 itemBuilder: (context, index) {
