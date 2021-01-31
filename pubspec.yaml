@@ -28,6 +28,7 @@ dependencies:
   sqflite:
   path:
   intl:
+  flutter_modular: any
     
 dev_dependencies:
   flutter_test:

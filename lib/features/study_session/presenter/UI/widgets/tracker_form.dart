@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'dart:async';
 import 'package:intl/intl.dart';
 
 import 'package:tomate_timer/features/study_session/presenter/controller/session_controller.dart';
 
 class TrackerForm extends StatefulWidget {
-  TrackerForm({Key key, @required SessionController this.controller})
-      : super(key: key);
-  final SessionController controller;
+  TrackerForm({Key key}) : super(key: key);
 
   @override
   _TrackerFormState createState() => _TrackerFormState();
 }
 
-class _TrackerFormState extends State<TrackerForm> {
+class _TrackerFormState extends ModularState<TrackerForm, SessionController> {
   final TextEditingController _currentWorkController = TextEditingController();
   String elapsedTime = '00:00:00';
   Stopwatch watch = Stopwatch();
@@ -77,9 +76,9 @@ class _TrackerFormState extends State<TrackerForm> {
     var text = _currentWorkController.text;
     String formattedDate = getDate();
 
-    widget.controller.dto = widget.controller.dto
+    controller.dto = controller.dto
         .copyWith(date: formattedDate, duration: elapsedTime, title: text);
-    widget.controller.saveSession().then((value) => debugPrint(value));
+    controller.saveSession().then((value) => debugPrint(value));
 
     _resetFields();
   }
