@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tomate_timer/features/study_session/presenter/UI/widgets/session.dart';
 import 'package:tomate_timer/features/study_session/presenter/controller/session_controller.dart';
 
 class TrackerList extends StatefulWidget {
-  TrackerList({Key key, @required SessionController this.controller})
-      : super(key: key);
-  final SessionController controller;
+  TrackerList({Key key}) : super(key: key);
 
   @override
   _TrackerListState createState() => _TrackerListState();
 }
 
-class _TrackerListState extends State<TrackerList> {
+class _TrackerListState extends ModularState<TrackerList, SessionController> {
   @override
   void initState() {
     super.initState();
-    widget.controller.findAllSessions();
+    controller.findAllSessions();
   }
 
   @override
@@ -23,7 +22,7 @@ class _TrackerListState extends State<TrackerList> {
     return SizedBox(
       height: 600,
       child: ValueListenableBuilder(
-        valueListenable: widget.controller.sessions,
+        valueListenable: controller.sessions,
         builder: (context, value, child) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
