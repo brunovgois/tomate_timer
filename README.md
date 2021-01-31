@@ -21,3 +21,7 @@ The architecture was built following the clean architectures principles, based a
   [intl](https://pub.dev/packages/intl):
   
   [modular](https://pub.dev/packages/flutter_modular): any
+  
+  [mobx](https://pub.dev/packages/mobx):
+  
+  [flutter_mobx](https://pub.dev/packages/flutter_mobx):
