@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:tomate_timer/features/study_session/presenter/UI/widgets/session.dart';
 import 'package:tomate_timer/features/study_session/presenter/controller/session_controller.dart';
 
@@ -21,18 +22,18 @@ class _TrackerListState extends ModularState<TrackerList, SessionController> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 600,
-      child: ValueListenableBuilder(
-        valueListenable: controller.sessions,
-        builder: (context, value, child) {
+      child: Observer(
+        // valueListenable: controller.sessions,
+        builder: (_) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListView.separated(
                 scrollDirection: Axis.vertical,
                 reverse: false, //temp, bug
                 shrinkWrap: true,
-                itemCount: value.length ?? 0,
+                itemCount: controller.sessions.length ?? 0,
                 itemBuilder: (context, index) {
-                  var tracker = value[index];
+                  var tracker = controller.sessions[index];
                   return Session(
                       title: tracker.title,
                       date: tracker.date,

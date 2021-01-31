@@ -29,8 +29,12 @@ dependencies:
   path:
   intl:
   flutter_modular: any
-    
+  mobx: ^1.2.1+4
+  flutter_mobx: ^1.1.0+2
+  
 dev_dependencies:
+  build_runner: ^1.11.0
+  mobx_codegen: ^1.1.2
   flutter_test:
     sdk: flutter
   integration_test:
