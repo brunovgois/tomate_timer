@@ -29,7 +29,11 @@ abstract class Controller with Store {
     return result.fold(
       (l) => ('Something whent wrong: ' + l.props[0]),
       (r) {
-        sessions = r.map((e) => this._mapper.to(e)).toList().cast<SessionDTO>();
+        sessions = r
+            .map((e) => this._mapper.to(e))
+            .toList()
+            .cast<SessionDTO>()
+            .asObservable();
         return 'Success!';
       },
     );
