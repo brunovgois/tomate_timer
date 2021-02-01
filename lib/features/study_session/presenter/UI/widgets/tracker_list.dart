@@ -23,7 +23,6 @@ class _TrackerListState extends ModularState<TrackerList, SessionController> {
     return SizedBox(
       height: 600,
       child: Observer(
-        // valueListenable: controller.sessions,
         builder: (_) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
