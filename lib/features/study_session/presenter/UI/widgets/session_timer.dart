@@ -64,6 +64,10 @@ class SessionTimerState extends ModularState<SessionTimer, SessionController> {
       widget.watch.reset();
     });
 
+    saveSession();
+  }
+
+  void saveSession() {
     var text = widget.textController.text;
     String formattedDate = getDate();
 
