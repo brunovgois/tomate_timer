@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:tomate_timer/features/study_session/presenter/UI/widgets/session_timer.dart';
 import 'package:tomate_timer/features/study_session/presenter/controller/session_controller.dart';
+import 'package:tomate_timer/features/study_session/presenter/controller/timer_controller.dart';
 
 class TrackerForm extends StatefulWidget {
   TrackerForm({Key key}) : super(key: key);
@@ -11,8 +12,7 @@ class TrackerForm extends StatefulWidget {
 }
 
 class _TrackerFormState extends ModularState<TrackerForm, SessionController> {
-  GlobalKey<SessionTimerState> timerState = GlobalKey();
-  final TextEditingController _currentWorkController = TextEditingController();
+  TimerController timerController = Modular.get<TimerController>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +22,22 @@ class _TrackerFormState extends ModularState<TrackerForm, SessionController> {
         Container(
           width: 200,
           child: TextField(
-            controller: _currentWorkController,
+            onChanged: timerController.setTextController,
             decoration: InputDecoration(
               labelText: 'What are you working on?',
             ),
           ),
         ),
-        SessionTimer(key: timerState, textController: _currentWorkController),
+        Observer(builder: (_) {
+          return Text(timerController.elapsedTime);
+        }),
         ElevatedButton(
-          onPressed: () => timerState.currentState.startOrStop(),
-          child: Text('Start/Stop'), //temp
-        ),
+            onPressed: () => timerController.startOrStop(),
+            child: Observer(
+              builder: (_) {
+                return Text(timerController.isTimerOff ? 'Start' : 'Stop');
+              },
+            )),
       ],
     );
   }

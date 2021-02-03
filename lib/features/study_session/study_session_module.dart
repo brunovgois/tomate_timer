@@ -6,6 +6,7 @@ import 'package:tomate_timer/features/study_session/infra/mapper/session_mapper.
 import 'package:tomate_timer/features/study_session/infra/repositories/session_repository_imp.dart';
 import 'package:tomate_timer/features/study_session/presenter/UI/sessions_page..dart';
 import 'package:tomate_timer/features/study_session/presenter/controller/session_controller.dart';
+import 'package:tomate_timer/features/study_session/presenter/controller/timer_controller.dart';
 
 class StudySessionModule extends ChildModule {
   @override
@@ -15,7 +16,8 @@ class StudySessionModule extends ChildModule {
         Bind((i) => SessionRepositoryImp(i.get(), i.get())),
         Bind((i) => SaveSessionUseCaseImp(i.get())),
         Bind((i) => FindAllSessionsUseCaseImp(i.get())),
-        Bind((i) => SessionController(i.get(), i.get(), i.get()))
+        Bind((i) => SessionController(i.get(), i.get(), i.get())),
+        Bind((i) => TimerController())
       ];
 
   @override
