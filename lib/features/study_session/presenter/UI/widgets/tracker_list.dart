@@ -27,8 +27,6 @@ class _TrackerListState extends ModularState<TrackerList, SessionController> {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListView.separated(
-                scrollDirection: Axis.vertical,
-                reverse: false, //temp, bug
                 shrinkWrap: true,
                 itemCount: controller.sessions.length ?? 0,
                 itemBuilder: (context, index) {

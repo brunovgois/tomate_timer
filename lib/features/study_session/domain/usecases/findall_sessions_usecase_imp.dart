@@ -13,9 +13,10 @@ class FindAllSessionsUseCaseImp implements FindAllSessionsUseCase {
   @override
   Future<Either<Failure, List<Session>>> findAll() async {
     var result = await _repository.findAll();
+
     return result.fold(
       (l) => Left(UseCaseException('Error retrieving all sessions')),
-      (r) => Right(r),
+      (r) => Right(r.reversed.toList()),
     );
   }
 }

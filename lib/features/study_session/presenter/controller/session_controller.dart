@@ -48,7 +48,7 @@ abstract class Controller with Store {
     return result.fold(
       (l) => ('Something went wrong: ' + l.props[0]),
       (r) {
-        sessions.add(this.dto);
+        findAllSessions();
         return 'Success!';
       },
     );
