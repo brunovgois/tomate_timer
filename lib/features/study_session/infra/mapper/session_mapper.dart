@@ -6,14 +6,14 @@ class SessionMapper implements Mapper<SessionDTO, Session> {
   @override
   Session from([SessionDTO object]) => Session(
         date: object?.date ?? '',
-        duration: object?.duration ?? 0,
+        duration: object?.duration ?? '00:00:00',
         title: object?.title ?? '',
       );
 
   @override
   SessionDTO to([Session object]) => SessionDTO(
         date: object?.date ?? '',
-        duration: object?.duration ?? 0,
+        duration: object?.duration ?? '00:00:00',
         title: object?.title ?? '',
       );
 }
