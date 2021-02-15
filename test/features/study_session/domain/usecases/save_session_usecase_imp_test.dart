@@ -6,7 +6,7 @@ import 'package:tomate_timer/features/study_session/domain/repositories/session_
 import 'package:tomate_timer/features/study_session/domain/usecases/save_session_usecase.dart';
 import 'package:tomate_timer/features/study_session/domain/usecases/save_session_usecase_imp.dart';
 
-import 'session_repository_mock.dart';
+class SessionRepositoryMock extends Mock implements SessionRepository {}
 
 void main() {
   SessionRepository _repository;

@@ -28,7 +28,7 @@ dependencies:
   sqflite:
   path:
   intl:
-  flutter_modular: any
+  flutter_modular: ^2.0.1
   mobx: ^1.2.1+4
   flutter_mobx: ^1.1.0+2
   
