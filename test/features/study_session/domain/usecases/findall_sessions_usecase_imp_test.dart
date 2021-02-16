@@ -43,6 +43,3 @@ void main() {
     result.fold((l) => expect(l, isA<UseCaseException>()), (r) => null);
   });
 }
-
-    // expect(result, Right<Failure, List<Session>>(_mockedList));
-// expect(l, isA<UseCaseException>())
