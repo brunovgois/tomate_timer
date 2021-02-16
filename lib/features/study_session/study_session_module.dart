@@ -4,6 +4,7 @@ import 'package:tomate_timer/features/study_session/domain/usecases/findall_sess
 import 'package:tomate_timer/features/study_session/domain/usecases/save_session_usecase.dart';
 import 'package:tomate_timer/features/study_session/domain/usecases/save_session_usecase_imp.dart';
 import 'package:tomate_timer/features/study_session/external/datasources/session_datasource_imp.dart';
+import 'package:tomate_timer/features/study_session/infra/datasources/session_datasource.dart';
 import 'package:tomate_timer/features/study_session/infra/mapper/session_mapper.dart';
 import 'package:tomate_timer/features/study_session/infra/repositories/session_repository_imp.dart';
 import 'package:tomate_timer/features/study_session/presenter/UI/sessions_page..dart';
@@ -14,7 +15,7 @@ class StudySessionModule extends ChildModule {
   @override
   List<Bind> get binds => [
         Bind((i) => SessionMapper()),
-        Bind((i) => SessionDatasourceImp()),
+        Bind<SessionDatasource>((i) => SessionDatasourceImp()),
         Bind((i) => SessionRepositoryImp(i.get(), i.get())),
         Bind<SaveSessionUseCase>((i) => SaveSessionUseCaseImp(i.get())),
         Bind<FindAllSessionsUseCase>((i) => FindAllSessionsUseCaseImp(i.get())),
