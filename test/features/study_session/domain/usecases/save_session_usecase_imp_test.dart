@@ -30,7 +30,7 @@ void main() {
     expect(result, right(newSession));
   });
 
-  test("Should retur an Exception when Save Session fails", () async {
+  test("Should return an Exception when Save Session fails", () async {
     when(_repository.save(newSession))
         .thenAnswer((_) async => Left(RepositoryException('error')));
 
