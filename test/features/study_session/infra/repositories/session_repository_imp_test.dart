@@ -50,7 +50,7 @@ void main() {
       _sessionMock = new Session(title: "new session");
 
       when(_datasourceMock.save(argThat(isA<SessionDTO>())))
-          .thenThrow(Left(RepositoryException('error')));
+          .thenThrow(Exception);
 
       var result = await _repository.save(_sessionMock);
 
