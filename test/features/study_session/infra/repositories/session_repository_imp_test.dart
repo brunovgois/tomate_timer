@@ -13,21 +13,22 @@ import 'package:tomate_timer/features/study_session/study_session_module.dart';
 class SessionDataSourceMock extends Mock implements SessionDatasource {}
 
 void main() {
-  SessionDatasource _datasourceMock = SessionDataSourceMock();
+  SessionDatasource _datasourceMock;
   SessionRepository _repository;
   Session _sessionMock;
   List<SessionDTO> _sessionsListDTOMock;
   List<Session> _sessionsListMock;
+
+  setUp(() {
+    _datasourceMock = SessionDataSourceMock();
+    _repository = Modular.get();
+  });
 
   initModule(StudySessionModule(), changeBinds: [
     Bind<SessionDatasource>((i) => _datasourceMock),
   ]);
 
   TestWidgetsFlutterBinding.ensureInitialized();
-
-  setUp(() {
-    _repository = Modular.get();
-  });
 
   test("repository is an instance of SessionRepository", () {
     expect(_repository, isA<SessionRepository>());
@@ -49,7 +50,7 @@ void main() {
       _sessionMock = new Session(title: "new session");
 
       when(_datasourceMock.save(argThat(isA<SessionDTO>())))
-          .thenThrow(Exception());
+          .thenThrow(Left(RepositoryException('error')));
 
       var result = await _repository.save(_sessionMock);
 
