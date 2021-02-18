@@ -28,8 +28,6 @@ void main() {
     Bind<SessionDatasource>((i) => _datasourceMock),
   ]);
 
-  TestWidgetsFlutterBinding.ensureInitialized();
-
   test("repository is an instance of SessionRepository", () {
     expect(_repository, isA<SessionRepository>());
   });
@@ -50,7 +48,7 @@ void main() {
       _sessionMock = new Session(title: "new session");
 
       when(_datasourceMock.save(argThat(isA<SessionDTO>())))
-          .thenThrow(Exception);
+          .thenThrow(Exception());
 
       var result = await _repository.save(_sessionMock);
 
