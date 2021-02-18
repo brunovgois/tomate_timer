@@ -27,4 +27,15 @@ void main() {
     expect(formFinder, findsOneWidget);
     expect(listFinder, findsOneWidget);
   });
+
+  testWidgets("Session page has the correct appBar title", (teste) async {
+    await teste.pumpWidget(
+      MaterialApp(
+        home: sessionsPage,
+      ),
+    );
+    final textFinder = find.text('Tomate Timer');
+
+    expect(textFinder, findsOneWidget);
+  });
 }
