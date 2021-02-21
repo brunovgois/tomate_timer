@@ -7,11 +7,11 @@ import 'package:tomate_timer/features/study_session/study_session_module.dart';
 void main() {
   TrackerForm form;
 
+  initModule(StudySessionModule());
+
   setUp(() {
     form = new TrackerForm();
   });
-
-  initModule(StudySessionModule());
 
   group("Tracker Form", () {
     testWidgets('Should have a text field', (tester) async {
@@ -48,5 +48,32 @@ void main() {
       final buttonFinder = find.byType(ElevatedButton);
       expect(buttonFinder, findsOneWidget);
     });
+
+    testWidgets("Elevated button should have a initial text of 'Start' ",
+        (tester) async {
+      await tester.pumpWidget(buildTestableWidget(MaterialApp(
+        home: Scaffold(body: form),
+      )));
+      final butttonTextFinder = find.text('Start');
+      expect(butttonTextFinder, findsOneWidget);
+    });
+
+    // TODO bug
+    // testWidgets(
+    //     "Elevated button should have a value of 'Stop' after session is initialized",
+    //     (tester) async {
+    //   await tester.pumpWidget(buildTestableWidget(MaterialApp(
+    //     home: Scaffold(body: form),
+    //   )));
+
+    //   final sessionButtonFinder = find.byType(ElevatedButton);
+
+    //   await tester.tap(sessionButtonFinder);
+    //   await tester.pump(Duration(milliseconds: 500));
+
+    //   final buttonTextFinder = find.text('Stop');
+
+    //   expect(buttonTextFinder, findsOneWidget);
+    // });
   });
 }
