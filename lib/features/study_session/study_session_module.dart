@@ -19,7 +19,8 @@ class StudySessionModule extends ChildModule {
         Bind((i) => SessionRepositoryImp(i.get(), i.get())),
         Bind<SaveSessionUseCase>((i) => SaveSessionUseCaseImp(i.get())),
         Bind<FindAllSessionsUseCase>((i) => FindAllSessionsUseCaseImp(i.get())),
-        Bind((i) => SessionController(i.get(), i.get(), i.get())),
+        Bind<SessionController>(
+            (i) => SessionController(i.get(), i.get(), i.get())),
         Bind((i) => TimerController())
       ];
 
