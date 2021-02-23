@@ -58,22 +58,21 @@ void main() {
       expect(butttonTextFinder, findsOneWidget);
     });
 
-    // TODO bug
-    // testWidgets(
-    //     "Elevated button should have a value of 'Stop' after session is initialized",
-    //     (tester) async {
-    //   await tester.pumpWidget(buildTestableWidget(MaterialApp(
-    //     home: Scaffold(body: form),
-    //   )));
+    testWidgets(
+        "Elevated button should have a value of 'Stop' after session is initialized",
+        (tester) async {
+      await tester.pumpWidget(buildTestableWidget(MaterialApp(
+        home: Scaffold(body: form),
+      )));
 
-    //   final sessionButtonFinder = find.byType(ElevatedButton);
+      final sessionButtonFinder = find.byType(ElevatedButton);
 
-    //   await tester.tap(sessionButtonFinder);
-    //   await tester.pump(Duration(milliseconds: 500));
+      await tester.tap(sessionButtonFinder);
+      await tester.pump(Duration(milliseconds: 500));
 
-    //   final buttonTextFinder = find.text('Stop');
+      final buttonTextFinder = find.text('Stop');
 
-    //   expect(buttonTextFinder, findsOneWidget);
-    // });
+      expect(buttonTextFinder, findsOneWidget);
+    });
   });
 }

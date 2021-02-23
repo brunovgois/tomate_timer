@@ -15,6 +15,12 @@ class _TrackerFormState extends ModularState<TrackerForm, SessionController> {
   TimerController timerController = Modular.get<TimerController>();
 
   @override
+  void dispose() {
+    timerController.timer?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
